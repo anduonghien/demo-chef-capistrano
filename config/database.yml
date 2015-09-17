@@ -17,6 +17,10 @@ default: &default
   password:
   host: localhost
 
+staging:
+  <<: *default
+  database: demo-chef-capistrano_staging
+
 development:
   <<: *default
   database: demo-chef-capistrano_development
