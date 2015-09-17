@@ -19,7 +19,7 @@ default: &default
 
 staging:
   <<: *default
-  database: demo-chef-capistrano_staging
+  database: an_db_chef
 
 development:
   <<: *default
