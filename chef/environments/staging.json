@@ -1,0 +1,10 @@
+{
+  "name": "staging",
+  "description": "Install environment for staging",
+  "json_class": "Chef::Environment",
+  "chef_type": "environment",
+  "default_attributes": {
+  },
+  "override_attributes": {
+  }
+}

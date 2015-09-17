@@ -1,0 +1,21 @@
+/home/an/.rvm/rubies/ruby-2.2.2/bin/ruby -r ./siteconf20150916-25673-1mml6bs.rb extconf.rb
+-I/home/an/vagrant_chef_capistrano/demo-chef-capistrano/chef/vendor/bundle/ruby/2.2.0/gems/libyajl2-1.2.0/lib/libyajl2/vendored-libyajl2/include $(cflags)  -fPIC
+-L/home/an/vagrant_chef_capistrano/demo-chef-capistrano/chef/vendor/bundle/ruby/2.2.0/gems/libyajl2-1.2.0/lib/libyajl2/vendored-libyajl2/lib -L. -fstack-protector -rdynamic -Wl,-export-dynamic
+checking for yajl/yajl_tree.h... yes
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling parser.c
+parser.c: In function ‘mParser_do_yajl_parse’:
+parser.c:184:3: warning: passing argument 2 of ‘get_opts_key’ discards ‘const’ qualifier from pointer target type [enabled by default]
+   ctx.symbolizeKeys = get_opts_key(self, "symbolize_keys");
+   ^
+parser.c:166:5: note: expected ‘char *’ but argument is of type ‘const char *’
+ int get_opts_key(VALUE self, char *key) {
+     ^
+linking shared-object ffi_yajl/ext/parser.so
+
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 parser.so ./.gem.20150916-25673-ans6p4/ffi_yajl/ext

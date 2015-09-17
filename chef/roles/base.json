@@ -1,0 +1,13 @@
+{
+  "name": "base",
+  "description": "Install base environment",
+  "json_class": "Chef::Role",
+  "chef_type": "role",
+  "run_list": [
+    "recipe[apt]",
+    "recipe[locale]",
+    "recipe[nginx]",
+    "recipe[vim]",
+    "recipe[imagemagick]"
+  ]
+}

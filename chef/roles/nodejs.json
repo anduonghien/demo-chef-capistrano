@@ -1,0 +1,11 @@
+{
+  "name": "nodejs",
+  "chef_type": "role",
+  "json_class": "Chef::Role",
+  "description": "Install NodeJs and NPM",
+  "default_attributes": {
+  },
+  "run_list": [
+    "recipe[nodejs]"
+  ]
+}

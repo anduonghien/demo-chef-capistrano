@@ -45,3 +45,9 @@ group :development do
   gem 'spring'
 end
 
+gem 'unicorn'
+gem 'capistrano-rails'
+gem 'capistrano-bundler'
+gem 'capistrano-unicorn-nginx', '~> 3.2.0'
+gem 'capistrano-sidekiq', github: 'seuros/capistrano-sidekiq'
+gem 'capistrano-rvm'
