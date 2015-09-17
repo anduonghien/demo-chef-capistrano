@@ -37,7 +37,16 @@ set :deploy_to, '/home/ubuntu/demo-chef-solo-capistrano'
 # set :keep_releases, 5
 
 namespace :deploy do
-
+  desc 'Invoke a rake command'
+  task :invoke, [:command] => 'deploy:set_rails_env' do |task, args|
+    on primary(:app) do
+      within current_path do
+        with :rails_env => fetch(:rails_env) do
+          rake args[:command]
+        end
+      end
+    end
+  end
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
       # Here we can do anything such as:
